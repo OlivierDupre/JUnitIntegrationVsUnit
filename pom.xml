@@ -37,15 +37,37 @@
                     </includes>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.18.1</version>
-                <configuration>
-                    <includes>
-                        <include>**/IntegrationTestSuite.java</include>
-                    </includes>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
+            
+    <profiles>
+        <profile>
+            <id>it</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <version>2.18.1</version>
+                        <configuration>
+                            <includes>
+                                <include>**/IntegrationTestSuite.java</include>
+                            </includes>
+                            <configuration>
+                                <parallel>methods</parallel>
+                                <threadCount>10</threadCount>
+                            </configuration>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

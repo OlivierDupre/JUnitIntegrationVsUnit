@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: fr.olivier.test1.IntegrationTestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE! - in fr.olivier.test1.IntegrationTestSuite
+testMethod1Fail(fr.olivier.test1.MyJunitCanvasTest)  Time elapsed: 0.002 sec  <<< FAILURE!
+java.lang.AssertionError: The test case is a prototype.
+	at org.junit.Assert.fail(Assert.java:88)
+	at fr.olivier.test1.MyJunitCanvasTest.testMethod1Fail(MyJunitCanvasTest.java:42)
+
