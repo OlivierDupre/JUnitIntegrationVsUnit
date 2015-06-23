@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.experimental.categories.Category;
 
 public class MyJunitCanvasTest {
 
@@ -32,6 +33,7 @@ public class MyJunitCanvasTest {
      * Test of method1 method, of class MyJunitCanvas.
      */
     @Test
+    @Category(IntegrationTest.class)
     public void testMethod1Fail() {
         System.out.println("method1");
         MyJunitCanvas instance = new MyJunitCanvas();
@@ -41,6 +43,7 @@ public class MyJunitCanvasTest {
     }
 
     @Test
+    @Category(UnitTest.class)
     public void testMethod1Success() {
         assertTrue(true);
     }
